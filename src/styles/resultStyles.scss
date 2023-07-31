@@ -1,0 +1,61 @@
+@use 'variables' as v;
+
+#calculator-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    
+    .result-section{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        align-items: center;
+        
+        .label{
+            color: v.$White;
+            .per-person{
+                display: block;
+                color: v.$Dark-grayish-cyan;
+            }
+        }
+
+        .amount{
+            color: v.$Strong-cyan;
+            font-size: 28px;
+        }
+        
+    }
+
+    #reset-button{
+        width: 100%;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        background-color: v.$Strong-cyan;
+        color: v.$Very-dark-cyan;
+        font-family: 'Space Mono';
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+
+        &:hover{
+            background-color: v.$Light-grayish-cyan;
+        }
+    }
+
+    @media (max-width: "850px") {
+
+        .result-section{
+            width: 90%;
+            padding-left: 18px;
+        }
+
+        #reset-button{
+            width: 90%;
+            align-self: center;
+        }
+    }
+    
+}

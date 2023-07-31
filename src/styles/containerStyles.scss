@@ -1,0 +1,54 @@
+@use 'variables' as v;
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+#container{
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    height: 400px;
+    background-color: v.$White;
+    border-radius: 20px;
+    font-family: 'Space Mono';
+
+    #calculator-form{
+        width: 50%;
+        margin: 30px 15px 30px 30px;
+    }
+
+    #calculator-result{
+        width: 50%;
+        background-color: v.$Very-dark-cyan;
+        border-radius: 20px;
+        padding: 25px;
+        margin: 30px 30px 30px 15px;
+    }
+
+    @media (max-width: "850px") {
+        flex-direction: column;
+        width: 400px;
+        height: 670px;
+        align-items: center;
+
+        #calculator-form{
+            width: 90%;
+            height: 55%;
+            margin: 15px 0px 7px 0px;
+        }
+
+        #calculator-result{
+            width: 85%;
+            height: 45%;
+            padding: 15px;
+            margin: 7px 0px 15px 0px;
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 350px;
+        height: 700px;
+
+        #calculator-result{
+            padding: 10px;
+        }
+    }
+}

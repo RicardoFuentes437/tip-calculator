@@ -1,0 +1,138 @@
+@use 'variables' as v;
+
+#calculator-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    gap: 25px;
+
+    .form-section{
+        display: flex;
+        flex-direction: column;
+
+        .input-label{
+            color: v.$Very-dark-cyan;
+            padding-bottom: 10px;
+        }
+
+        input{
+            height: 25px;
+            border-radius: 5px;
+            font-size: 20px;
+            border: 2px solid v.$White;
+            color: v.$Very-dark-cyan;
+            background-color: v.$Very-light-grayish-cyan;
+
+            &:focus{
+                outline: none;
+                border: 2px solid v.$Strong-cyan;
+            }
+        }
+
+        #bill-total-input{
+            text-align: right;
+            font-family: 'Space Mono';
+            background-image: url('../../public/images/icon-dollar.svg');
+            background-repeat: no-repeat;
+            background-position: left;
+
+            &::placeholder{
+                color: v.$Grayish-cyan;
+            }
+        }
+
+        #people-info{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            #error-message{
+                color: red;
+            }
+        }
+
+        #people-number-input{
+            text-align: right;
+            font-family: 'Space Mono';
+            background-image: url('../../public/images/icon-person.svg');
+            background-repeat: no-repeat;
+            background-position: left;
+
+            &::placeholder{
+                color: v.$Grayish-cyan;
+            }
+        }
+
+        #tip-options{
+            display: grid;
+            grid-template-columns: repeat(3, 32%);
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-areas: 
+            "one two three"
+            "four five six";
+            gap: 8px;
+
+            button{
+                background-color: v.$Very-dark-cyan;
+                color: v.$White;
+                font-family: 'Space Mono';
+                border-radius: 5px;
+                border: none;
+                height: 40px;
+                cursor: pointer;
+
+                &:hover{
+                    background-color: v.$Strong-cyan;
+                }
+            }
+    
+            #button-5{
+                grid-area: "one";
+            }
+    
+            #button-10{
+                grid-area: "two";
+            }
+    
+            #button-15{
+                grid-area: "three";
+            }
+    
+            #button-25{
+                grid-area: "four";
+            }
+    
+            #button-50{
+                grid-area: "five";
+            }
+    
+            #input-custom{
+                grid-area: "six";
+                text-align: center;
+                font-family: 'Space Mono';
+                height: 40px;
+
+                &::placeholder{
+                    color: v.$Very-dark-cyan;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .form-section{
+            #tip-options{
+                grid-template-columns: repeat(2, 50%);
+                grid-template-rows: repeat(3, 1fr);
+                grid-template-areas: 
+                "one two"
+                "three four" 
+                "five six";
+                gap: 5px;
+            }
+        }
+    }
+
+}
